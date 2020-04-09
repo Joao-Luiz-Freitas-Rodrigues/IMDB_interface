@@ -1,0 +1,343 @@
+@font-face {
+  font-family: "montserrat-bold";
+  src: url("./assets/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("./assets/fonts/Montserrat/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+/* Home styles */
+#home {
+  background-image: url("./assets//images/capa_madmax.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+#home::after {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 212, 255, 0) 75%
+  );
+  content: "";
+  height: 90%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* Navbar styles */
+#navbar {
+  width: 960px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#navbar li {
+  list-style-type: none;
+  margin: 0 25px;
+  color: #fff;
+  font-size: 13px;
+  font-family: "montserrat-bold";
+  z-index: 2;
+}
+.nav_option {
+  color: #fff;
+}
+.nav_option:hover {
+  cursor: pointer;
+  color: #e4bb2d;
+  transition: 0.2s;
+}
+.nav_option:not(:hover) {
+  transition: 0.2s;
+}
+#user_profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#user_photo {
+  background-image: url("./assets/images/walter-white.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45px;
+  width: 45px;
+  border-radius: 22.5px;
+  margin: 0 15px;
+}
+#user_profile span {
+  color: #fff;
+  font-family: "montserrat-bold";
+  font-size: 13px;
+}
+
+/* home content styles */
+
+#home_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 960px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 150px 0 20px 0;
+  z-index: 20;
+}
+
+#movie_name {
+  font-size: 65px;
+  font-family: "montserrat-bold";
+  color: #fff;
+}
+
+#movie_types span {
+  font-family: "montserrat";
+  font-size: 13px;
+  color: #fff;
+  margin: 0 10px 0 0;
+}
+
+#trailer_button {
+  transition: 0.2s;
+  background: #e4bb23;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-family: "montserrat-regular";
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px 0;
+}
+#trailer_button:hover {
+  cursor: pointer;
+  background: #b3921e;
+  transition: 0.2s;
+}
+#trailer_button img {
+  width: 20px;
+  margin-left: 5px;
+}
+
+#movies_span {
+  font-family: "montserrat-regular";
+  color: #fff;
+  font-size: 14px;
+}
+#movie_date_span {
+  font-family: "montserrat-regular";
+  color: #cfad30;
+  font-size: 14px;
+}
+
+/* Movies list styles */
+#movies_list {
+  /* height: 100%; */
+  display: flex;
+  background: #f2f2f2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 40px;
+}
+
+#options {
+  width: 960px;
+  display: flex;
+  border-bottom: grey;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#options_item {
+  transition: 0.2s;
+  cursor: pointer;
+  padding: 25px 0;
+  margin: 0 20px;
+  font-family: "montserrat-bold";
+  color: #e4bb23;
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+
+#options_item:hover {
+  transition: 0.2s;
+  border-bottom: 1px solid #e4bb23;
+}
+
+#movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 960px;
+  margin-top: 25px;
+}
+
+.movie_option {
+  /* height: 400px; */
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.play_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.6);
+  visibility: hidden;
+  top: 0;
+}
+
+.play_div span {
+  font-size: 16px;
+  color: #e4bb23;
+  font-family: "montserrat-bold";
+  z-index: 99;
+}
+.play_div i {
+  font-size: 40px;
+  color: #fff;
+  margin-top: 30px;
+}
+.play_div i:hover {
+  color: #e4bb23;
+  transition: 0.3s;
+}
+.movie_option:hover .play_div {
+  visibility: visible;
+}
+.movie_picture {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+.movie_picture img {
+  height: 100%;
+  width: 100%;
+}
+.movie_description {
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background: #fff;
+}
+.movie_description span {
+  margin: 5px;
+}
+
+.movie_title {
+  font-family: "montserrat-bold";
+  font-size: 14px;
+}
+.movie_content {
+  font-family: "montserrat-regular";
+  font-size: 12px;
+  color: #e4bb23;
+}
+
+.rating_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+.rate_span {
+  font-family: "montserrat-bold";
+  font-size: 18px;
+}
+.rating_div i {
+  font-size: 20px;
+  color: grey;
+  transition: 0.2s;
+}
+.rating_div i:hover {
+  cursor: pointer;
+  color: red;
+  transition: 0.2s;
+}
+
+/* Footer styles */
+
+footer {
+  height: 100px;
+  width: 940px;
+  display: flex;
+  background: #fff;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+footer img {
+  height: 45px;
+}
+#social_media_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+}
+
+#social_media_icons i {
+  font-size: 23px;
+  color: #bababa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#twitter_icon:hover {
+  color: #00acee;
+  transition: 0.2s;
+}
+
+#facebook_icon:hover {
+  color: #3b5998;
+}
+#instagram_icon:hover {
+  color: rgb(236, 67, 25);
+}
